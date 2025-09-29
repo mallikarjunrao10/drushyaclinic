@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Drushya Skin & Hair Transplant Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Define a subtle accent color and a primary color for the tabs */
+        :root {
+            --primary-accent: #17a2b8; /* A professional light blue/cyan */
+            --highlight-text-color: #fce38a; /* A soft yellow for contrast */
+        }
+
+        /* ==================================== */
+        /* GALLERY SPECIFIC STYLES */
+        /* ==================================== */
+
+        /* --- UPDATED HERO SECTION WITH BACKGROUND IMAGE --- */
+        .page-hero {
+            /* NOTE: Replace 'assets/images/gallery-hero-bg.jpg' with your actual image path. */
+            /* Added a dark overlay (0, 0, 0, 0.7) for maximum text readability. */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/gallery-hero-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            
+            padding: 100px 0; 
+            text-align: center;
+        }
+
+        /* Style text for contrast on the dark background */
+        .services-header-content .section-tagline,
+        .services-header-content .section-title,
+        .services-header-content .section-description {
+            color: white; 
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+        }
+        
+        .services-header-content .highlight-text {
+            color: var(--highlight-text-color); 
+        }
+
+        .gallery-main-content {
+            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- IMPROVED GALLERY TABS STYLING --- */
+        .gallery-tabs-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-tab-button {
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd; /* Lighter border when inactive */
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 30px; /* Pill shape for a modern look */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-tab-button.active {
+            background-color: var(--primary-accent); 
+            color: white;
+            border-color: var(--primary-accent); 
+            box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3); /* Accent shadow */
+        }
+
+        .gallery-tab-button:hover:not(.active) {
+            background-color: #f5f5f5;
+            color: var(--primary-accent);
+            border-color: var(--primary-accent); 
+        }
+        /* --- END TABS STYLING --- */
+
+        /* Gallery Content Styling */
+        .gallery-tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .gallery-tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Image Grid */
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px; 
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Video Grid */
+        .video-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Instagram/Social Section */
+        .social-feed-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-feed-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .instagram-placeholder {
+            min-height: 400px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+        }
+
+        .instagram-placeholder i {
+            font-size: 50px;
+            color: #E1306C;
+            margin-bottom: 15px;
+        }
+
+        .instagram-placeholder a {
+            font-weight: 700;
+            color: var(--primary-accent); 
+        }
+        
+        .gallery-button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        /* ==================================== */
+        /* END GALLERY SPECIFIC STYLES */
+        /* ==================================== */
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/drushyalogoooooo.JPG" alt="Drushya Clinic Logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="hair-transplant.html">Hair Transplant</a>
+                            <a href="skin-care.html">Skin Care</a>
+                            <a href="cosmetic-treatments.html">Cosmetic Treatments</a>
+                        </div>
+                    </li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="index.html#client-testimonials">Testimonials</a></li>
+                    <li><a href="#" class="main-button book-now-btn open-modal-btn">Book Appointment</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-dropdown-toggle">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="hair-transplant.html">Hair Transplant</a></li>
+                    <li><a href="skin-care.html">Skin Care</a></li>
+                    <li><a href="cosmetic-treatments.html">Cosmetic Treatments</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="index.html#client-testimonials">Testimonials</a></li>
+            <li class="mobile-book-btn-wrapper">
+                <button class="main-button book-now-btn open-modal-btn">Book Appointment</button>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="page-hero">
+            <div class="services-header-content">
+                <p class="section-tagline">Our Work & Clinic</p>
+                <h1 class="section-title">Drushya Clinic <span class="highlight-text">Gallery</span></h1>
+                <p class="section-description">Explore our results, see our modern facility, and watch educational videos on our specialist treatments.</p>
+            </div>
+        </section>
+        
+        <section class="gallery-main-content animate-on-scroll">
+            
+            <div class="gallery-tabs-buttons">
+                <button class="gallery-tab-button active" data-tab="photos">Photos & Results</button>
+                <button class="gallery-tab-button" data-tab="videos">Videos & Media</button>
+                <button class="gallery-tab-button" data-tab="social">Social Feed</button>
+            </div>
+
+            <div id="photos-content" class="gallery-tab-content active">
+                <div class="photo-gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/images/beforeafter2.JPG" alt="Hair Transplant Before and After Result 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/drushyaimages.JPG" alt="Drushya Clinic Interior View">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x450/87CEEB/FFFFFF?text=Procedure+Room+View" alt="Treatment Room Photo">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/beforeafter3.JPG" alt="Hair Transplant Before and After Result 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/aboutsuman.JPG" alt="Dr. V. Suman Chandar Rao with Patient">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x450/FFC0CB/333333?text=Skin+Treatment+Result" alt="Acne Treatment Result">
+                    </div>
+                    
+                    <div class="gallery-item"><img src="https://via.placeholder.com/600x450/00FFFF/000000?text=Clinic+Lobby+View" alt="Clinic Image"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/600x450/ADFF2F/000000?text=Hair+Restoration+Result+3" alt="Client Result"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/600x450/FFA07A/000000?text=Laser+Treatment+Setup" alt="Laser Machine"></div>
+
+                </div>
+                <div class="gallery-button-container">
+                    <a href="#" class="main-button book-now-btn open-modal-btn">Book Appointment to Start Your Transformation</a>
+                </div>
+            </div>
+
+            <div id="videos-content" class="gallery-tab-content">
+                <div class="video-gallery-grid">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    </div>
+                <div class="gallery-button-container">
+                    <a href="#" class="main-button view-services-btn">Subscribe to Our YouTube Channel</a>
+                </div>
+            </div>
+
+            <div id="social-content" class="gallery-tab-content">
+                <div class="social-feed-section">
+                    <h3 class="section-title" style="margin-bottom: 20px;">Connect With Us on Instagram</h3>
+                    <p>Follow our latest updates, treatment highlights, and patient journeys on our official Instagram feed.</p>
+
+                    <div class="instagram-placeholder">
+                        <i class="fab fa-instagram"></i>
+                        <h4>Instagram Feed Placeholder</h4>
+                        <p>To display your live feed, you will need to use an **Instagram API** or a **third-party widget/plugin**.</p>
+                        <p>For now, click the link below to visit our page directly!</p>
+                        <a href="#" target="_blank" class="main-button">Visit @drushyaclinic on Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column brand-info">
+                <h4><a href="index.html">Drushya Clinic</a></h4>
+                <p>We are a leading <b>Skin, Hair & Hair Transplant Center</b> dedicated to providing specialized and personalized care in Karimnagar.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="hair-transplant.html">Services</a></li> 
+                    <li><a href="index.html#client-testimonials">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#" class="open-modal-btn">Book Appointment</a></li> 
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Book Appointment</h4>
+                <ul class="footer-links-list">
+                    <li><a href="https://www.google.com/maps/embed?pb=1" target="_blank"><i class="fas fa-map-marker-alt"></i> Beside Chennay Shopping Mall, Court to CVRN Road, Karimnagar - 505001</a></li>
+                    <li><a href="tel:+919676004792"><i class="fas fa-phone"></i> +91-9676004792</a></li>
+                    <li><a href="mailto:drushyaclinic@gmail.com"><i class="fas fa-envelope"></i> drushyaclinic@gmail.com</a></li>
+                </ul>
+                <div class="call-today-box">
+                    <div class="call-icon-wrapper">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="call-text-numbers">
+                        <p class="call-today-text">For Appointments, Call Today</p>
+                        <p class="call-today-number">+91 9676004792</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Clinic Hours</h4>
+                <p class="clinic-hours">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                <p class="clinic-hours">Sun: Closed</p>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© <span id="current-year-footer">2023</span> Drushya Clinic. All Rights Reserved. | Designed by <a href="#" target="_blank">Your Name</a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/919676004792" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div id="appointmentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Your Consultation</h3>
+                <button class="close-modal-button">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="formMessageArea" style="display:none; color:red; margin-bottom: 15px; font-weight: bold;"></p>
+                
+                <form id="appointmentForm">
+                    <input type="text" id="name" name="Name" placeholder="Full Name" required>
+                    <input type="tel" id="phone" name="Phone" placeholder="Phone Number" required>
+                    <select id="service" name="Service" required>
+                        <option value="" disabled selected>Select an Interested Service</option>
+                        <option value="Hair Transplant">Hair Transplant</option>
+                        <option value="Skin Care">Skin Care</option>
+                        <option value="Cosmetic Treatments">Cosmetic Treatments</option>
+                        <option value="General Query">General Query</option>
+                    </select>
+                    <input type="text" id="city" name="City" placeholder="Your City/Location">
+                    <input type="hidden" id="source" name="Source" value="Website Form - Gallery Page">
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="loadingSpinner" class="modal-overlay spinner-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content success-modal-content">
+            <div class="success-icon">✅</div>
+            <h2>Appointment Confirmed!</h2>
+            <p>Thank you. Your request has been received. Our team will contact you shortly to confirm your time slot.</p>
+            <button class="close-modal-btn">Close</button>
+        </div>
+    </div>
+    
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Gallery Tab Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.gallery-tab-button');
+            const contents = document.querySelectorAll('.gallery-tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and content
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to the clicked tab
+                    tab.classList.add('active');
+
+                    // Show the corresponding content
+                    const targetTab = tab.getAttribute('data-tab');
+                    document.getElementById(targetTab + '-content').classList.add('active');
+                });
+            });
+
+            // Update footer year for the gallery page as well
+            const currentYearFooter = document.getElementById('current-year-footer');
+            if (currentYearFooter) {
+                currentYearFooter.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+
+</body>
+</html>

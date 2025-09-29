@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. V. Suman Chandar Rao | Drushya Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script> <style>
+        /* Define colors for the hero section to match the professional look of the gallery page */
+        :root {
+            --primary-accent: #17a2b8; /* Professional Light Blue */
+            --highlight-text-color: #fce38a; /* Soft Yellow for contrast */
+        }
+
+        /* --- STYLES FOR HERO SECTION --- */
+        .page-hero-section {
+            /* NOTE: Use an image related to the doctor or the clinic's interior for the About page */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/about-hero-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            
+            padding: 100px 0; 
+            text-align: center;
+        }
+
+        /* Style text for contrast on the dark background */
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-hero-content .section-tagline,
+        .page-hero-content .page-title {
+            color: white; 
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Ensure the main title is prominent */
+        .page-hero-content .page-title {
+            font-size: 2.5rem; /* Adjust as needed */
+            margin-top: 10px;
+        }
+
+        /* --- HIGHLIGHTS SECTION STYLING --- */
+        .highlights-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .highlight-card {
+            flex-basis: 200px; /* Adjust size */
+            margin: 20px 10px;
+        }
+
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 5px;
+        }
+
+        .highlight-label {
+            font-size: 1rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* --- CTA SECTION STYLING --- */
+        .cta-section-about {
+            background-color: var(--primary-accent);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/drushyalogoooooo.JPG" alt="Drushya Clinic Logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="hair-transplant.html">Hair Transplant</a>
+                            <a href="skin-care.html">Skin Care</a>
+                            <a href="cosmetic-treatments.html">Cosmetic Treatments</a>
+                        </div>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#client-testimonials">Testimonials</a></li>
+                    <li><a href="#" class="main-button book-now-btn open-modal-btn">Book Appointment</a></li> 
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-dropdown-toggle">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="hair-transplant.html">Hair Transplant</a></li>
+                    <li><a href="skin-care.html">Skin Care</a></li>
+                    <li><a href="cosmetic-treatments.html">Cosmetic Treatments</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="index.html#client-testimonials">Testimonials</a></li>
+            <li class="mobile-book-btn-wrapper">
+                <button class="main-button book-now-btn open-modal-btn">Book Appointment</button>
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="page-hero-section animate-on-scroll">
+            <div class="page-hero-content">
+                <p class="section-tagline">Meet Our Founder</p>
+                <h1 class="page-title">Dr. V. Suman Chandar Rao</h1>
+            </div>
+        </section>
+
+        <section class="about-doctor-full-section animate-on-scroll">
+            <div class="about-full-container">
+                <div class="about-full-image">
+                    <img src="assets/images/aboutsuman.JPG" alt="Dr. V. Suman Chandar Rao" class="doctor-full-image">
+                </div>
+                <div class="about-full-content">
+                    <h2 class="section-title">A Leader in Skin & Hair Care</h2>
+                    <p>Dr. V. Suman Chandar Rao founded Drushya Skin, Laser & Hair Transplant Center with a vision to provide the highest quality of care in skin, hair, and laser treatments. As a distinguished Dermatologist, Cosmetologist, and Dermato Surgeon, he is widely recognized as the top hair transplant specialist in Karimnagar.</p>
+                    <p>Holding an M.D. (DVL) from Osmania Medical College, he offers advanced procedures like Bio-FUE Hair Transplant, alongside comprehensive solutions for conditions like V.D. leprosy and allergies, ensuring every patient receives dedicated and personalized treatment.</p>
+                    
+                    <h3 class="expertise-title">Specializations & Expertise:</h3>
+                    <ul class="expertise-list">
+                        <li><i class="fas fa-check-circle"></i> Dermatology & Venereology</li>
+                        <li><i class="fas fa-check-circle"></i> Hair Transplant & Restoration</li>
+                        <li><i class="fas fa-check-circle"></i> Skin, V.D. Leprosy & Allergy Specialist</li>
+                        <li><i class="fas fa-check-circle"></i> Cosmetic & Aesthetic Treatments</li>
+                        <li><i class="fas fa-check-circle"></i> Dermato Surgery</li>
+                        <li><i class="fas fa-check-circle"></i> Laser Treatments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section animate-on-scroll">
+            <div class="highlight-card" data-count="10">
+                <div class="highlight-number counter-number">0</div>
+                <p class="highlight-label">Years of Experience</p>
+            </div>
+            <div class="highlight-card" data-count="5000">
+                <div class="highlight-number counter-number">0</div>
+                <p class="highlight-label">Happy Patients</p>
+            </div>
+            <div class="highlight-card" data-count="100">
+                <div class="highlight-number counter-number">0</div>
+                <p class="highlight-label">Positive Reviews</p>
+            </div>
+            <div class="highlight-card" data-count="12">
+                <div class="highlight-number counter-number">0</div>
+                <p class="highlight-label">Expert Staff</p>
+            </div>
+        </section>
+
+        <section class="cta-section-about animate-on-scroll">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Look?</h2>
+                <p class="cta-subtitle">Schedule a personalized consultation with Dr. V. Suman Chandar Rao today.</p>
+                <button class="main-button cta-button open-modal-btn">Book Your Appointment Now</button>
+            </div>
+        </section>
+
+        <section class="map-section animate-on-scroll" id="contact-section">
+            <div class="services-header-content">
+                <p class="section-tagline">Find Us</p>
+                <h2 class="section-title">Visit Our Clinic</h2>
+                <p class="section-description">We are conveniently located and ready to welcome you. Use the map below to get directions to our clinic.</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.913889780477!2d79.1237644742354!3d18.44221847156479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccd92296b10413%3A0xbc031dfc54832cc7!2sDrushya%20Skin%2C%20Hair%20transplant%20%26%20Laser%20Clinic!5e0!3m2!1sen!2sin!4v1758647828363!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column brand-info">
+                <h4><a href="#">Drushya Clinic</a></h4>
+                <p>We are a leading <b>Skin, Hair & Hair Transplant Center</b> dedicated to providing specialized and personalized care in Karimnagar.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li> 
+                    <li><a href="index.html#client-testimonials">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#" class="open-modal-btn">Book Appointment</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Book Appointment</h4>
+                <ul class="footer-links-list">
+                    <li><a href="https://www.google.com/maps/embed?pb=1" target="_blank"><i class="fas fa-map-marker-alt"></i> Beside Chennay Shopping Mall, Court to CVRN Road, Karimnagar - 505001</a></li>
+                    <li><a href="tel:+919676004792"><i class="fas fa-phone"></i> +91-9676004792</a></li>
+                    <li><a href="mailto:drushyaclinic@gmail.com"><i class="fas fa-envelope"></i> drushyaclinic@gmail.com</a></li>
+                </ul>
+                <div class="call-today-box">
+                    <div class="call-icon-wrapper">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="call-text-numbers">
+                        <p class="call-today-text">For Appointments, Call Today</p>
+                        <p class="call-today-number">+91 9676004792</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Clinic Hours</h4>
+                <p class="clinic-hours">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                <p class="clinic-hours">Sun: Closed</p>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© <span id="current-year">2023</span> Drushya Clinic. All Rights Reserved. | Designed by <a href="#" target="_blank">Your Name</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919676004792" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="appointmentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Your Appointment</h3>
+                <button class="close-modal-button">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="formMessageArea" style="display:none; color:red; margin-bottom: 15px; font-weight: bold;"></p>
+                
+                <form id="appointmentForm">
+                    <input type="text" id="name" name="Name" placeholder="Full Name" required>
+                    <input type="tel" id="phone" name="Phone" placeholder="Phone Number" required>
+                    <select id="service" name="Service" required>
+                        <option value="" disabled selected>Select an Interested Service</option>
+                        <option value="Hair Transplant">Hair Transplant</option>
+                        <option value="Skin Care">Skin Care</option>
+                        <option value="Cosmetic Treatments">Cosmetic Treatments</option>
+                        <option value="Other">Other/General Consultation</option>
+                    </select>
+                    <input type="text" id="city" name="City" placeholder="Your City/Location">
+                    <input type="hidden" id="source" name="Source" value="Website Form - About Page">
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="loadingSpinner" class="modal-overlay spinner-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content success-modal-content">
+            <div class="success-icon">✅</div>
+            <h2>Appointment Confirmed!</h2>
+            <p>Thank you. Your request has been received. Our team will contact you shortly to confirm your time slot.</p>
+            <button class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal-overlay image-modal-overlay">
+        <div class="modal-content image-modal-content">
+            <span class="close-modal-button" id="closeImageModal">×</span>
+            <img id="modalImage" src="" alt="Enlarged Image">
+        </div>
+    </div>
+
+</body>
+</html>
