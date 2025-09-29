@@ -99,6 +99,90 @@
             font-size: 1.1rem;
             margin-bottom: 25px;
         }
+
+        /* --- NEW STYLES FOR MOBILE OPTIMIZATION (about-doctor-full-section) --- */
+        .about-doctor-full-section {
+            padding: 60px 20px; /* Added horizontal padding for mobile view */
+            /* Assuming 'container' or similar class is usually max-width, 
+               but applying it directly to this section for better control. */
+        }
+        
+        .about-full-container {
+            display: flex;
+            align-items: flex-start; /* Aligns content better */
+            gap: 40px; /* Spacing between image and text */
+            max-width: 1200px; /* Limit width on very large screens */
+            margin: 0 auto;
+        }
+
+        .about-full-image {
+            flex: 0 0 350px; /* Fixed width for the image column on desktop */
+            text-align: center;
+            padding-top: 20px;
+        }
+        
+        .doctor-full-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px; /* Optional: adds a soft border to the image */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-full-content {
+            flex: 1; /* Takes up remaining space */
+        }
+
+        .expertise-title {
+            margin-top: 25px;
+            color: #333;
+            border-bottom: 2px solid var(--primary-accent);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* Spacing between list items */
+        }
+
+        .expertise-list li {
+            font-size: 1rem;
+            color: #555;
+            flex-basis: 45%; /* Two columns on desktop */
+        }
+
+        .expertise-list li i {
+            color: var(--primary-accent);
+            margin-right: 8px;
+        }
+
+        /* Media Query for Mobile Optimization */
+        @media (max-width: 900px) {
+            .about-full-container {
+                flex-direction: column; /* Stacks the content vertically */
+                gap: 20px;
+            }
+
+            .about-full-image {
+                flex: none;
+                max-width: 300px; /* Smaller max width for image on tablet/mobile */
+                margin: 0 auto;
+            }
+
+            .expertise-list li {
+                flex-basis: 100%; /* Single column list on mobile */
+            }
+
+            .about-doctor-full-section {
+                padding: 40px 15px; /* Reduced padding on very small screens */
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -134,7 +218,7 @@
     <nav class="mobile-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li class="mobile-dropdown-toggle">
                 <a href="hair-transplant.html">Services <i class="fas fa-chevron-down"></i></a>
                 <ul class="mobile-dropdown-menu">
