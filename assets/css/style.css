@@ -1460,3 +1460,15 @@ a:hover {
         font-size: 1.1rem
     }
 }
+
+/* TARGETED FIX: Specific rule for contact links that contain an icon (like the email, phone, and address) to ensure the icon and text stay on the same line. */
+.footer-links-list li a:has(i) {
+    /* Use Flexbox to put the icon and text side-by-side */
+    display: flex; 
+    
+    /* Vertically center the icon with the text */
+    align-items: center; 
+    
+    /* Add spacing between the icon and the link text */
+    gap: 8px; 
+}
